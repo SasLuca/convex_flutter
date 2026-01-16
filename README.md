@@ -1,4 +1,17 @@
-# convex_flutter
+# Convex Flutter
+
+<p align="center">
+  <table>
+    <tr>
+      <td><img src="example/screenshots/app_screenshot.png" alt="Home Screen" width="250"/></td>
+      <td><img src="example/screenshots/messaging_screenshot.png" alt="Messaging Screen" width="250"/></td>
+    </tr>
+    <tr>
+      <td align="center"><b>Home Screen</b></td>
+      <td align="center"><b>Real-time Messaging</b></td>
+    </tr>
+  </table>
+</p>
 
 A Flutter plugin for integrating with the Convex backend. It provides a simple Dart API over the Convex Rust core to run queries, mutations, and actions, and to subscribe to real-time updates.
 
