@@ -164,7 +164,7 @@ class ConvexClient {
   ///
   /// Returns the query result as a JSON string.
   /// Throws [TimeoutException] if the operation exceeds [config.operationTimeout].
-  Future<String> query(String name, Map<String, String> args) =>
+  Future<String> query(String name, Map<String, dynamic> args) =>
       _impl.query(name, args);
 
   /// Executes a Convex mutation operation with timeout.
@@ -178,7 +178,7 @@ class ConvexClient {
     required String name,
     required Map<String, dynamic> args,
   }) =>
-      _impl.mutation(name: name, args: args.map((k, v) => MapEntry(k, v.toString())));
+      _impl.mutation(name: name, args: args);
 
   /// Executes a Convex action operation with timeout.
   ///
@@ -191,7 +191,7 @@ class ConvexClient {
     required String name,
     required Map<String, dynamic> args,
   }) =>
-      _impl.action(name: name, args: args.map((k, v) => MapEntry(k, v.toString())));
+      _impl.action(name: name, args: args);
 
   /// Creates a real-time subscription to a Convex query.
   ///
@@ -203,7 +203,7 @@ class ConvexClient {
   /// Returns a handle that can be used to cancel the subscription.
   Future<SubscriptionHandle> subscribe({
     required String name,
-    required Map<String, String> args,
+    required Map<String, dynamic> args,
     required void Function(String) onUpdate,
     required void Function(String, String?) onError,
   }) =>

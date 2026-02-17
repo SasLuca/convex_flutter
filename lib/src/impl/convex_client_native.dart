@@ -111,7 +111,7 @@ class NativeConvexClient implements IConvexClient {
   // ============================================================================
 
   @override
-  Future<String> query(String name, Map<String, String> args) async {
+  Future<String> query(String name, Map<String, dynamic> args) async {
     final formattedArgs = buildArgs(args);
     return await _rustClient
         .query(name: name, args: formattedArgs)
@@ -121,7 +121,7 @@ class NativeConvexClient implements IConvexClient {
   @override
   Future<String> mutation({
     required String name,
-    required Map<String, String> args,
+    required Map<String, dynamic> args,
   }) async {
     final formattedArgs = buildArgs(args);
     return await _rustClient
@@ -132,7 +132,7 @@ class NativeConvexClient implements IConvexClient {
   @override
   Future<String> action({
     required String name,
-    required Map<String, String> args,
+    required Map<String, dynamic> args,
   }) async {
     final formattedArgs = buildArgs(args);
     return await _rustClient
@@ -143,7 +143,7 @@ class NativeConvexClient implements IConvexClient {
   @override
   Future<SubscriptionHandle> subscribe({
     required String name,
-    required Map<String, String> args,
+    required Map<String, dynamic> args,
     required void Function(String) onUpdate,
     required void Function(String, String?) onError,
   }) async {

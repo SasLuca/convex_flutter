@@ -31,7 +31,7 @@ abstract class IConvexClient {
   /// Throws:
   /// - [TimeoutException] if operation exceeds configured timeout
   /// - [ClientError] for Convex-specific errors
-  Future<String> query(String name, Map<String, String> args);
+  Future<String> query(String name, Map<String, dynamic> args);
 
   /// Executes a Convex mutation operation.
   ///
@@ -45,7 +45,7 @@ abstract class IConvexClient {
   /// - [ClientError] for Convex-specific errors
   Future<String> mutation({
     required String name,
-    required Map<String, String> args,
+    required Map<String, dynamic> args,
   });
 
   /// Executes a Convex action operation.
@@ -60,7 +60,7 @@ abstract class IConvexClient {
   /// - [ClientError] for Convex-specific errors
   Future<String> action({
     required String name,
-    required Map<String, String> args,
+    required Map<String, dynamic> args,
   });
 
   /// Creates a real-time subscription to a Convex query.
@@ -73,7 +73,7 @@ abstract class IConvexClient {
   /// Returns a handle that can be used to cancel the subscription.
   Future<SubscriptionHandle> subscribe({
     required String name,
-    required Map<String, String> args,
+    required Map<String, dynamic> args,
     required void Function(String) onUpdate,
     required void Function(String, String?) onError,
   });
